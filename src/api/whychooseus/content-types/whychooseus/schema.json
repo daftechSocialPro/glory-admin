@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "whychooseuses",
+  "info": {
+    "singularName": "whychooseus",
+    "pluralName": "whychooseuses",
+    "displayName": "whychooseus"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

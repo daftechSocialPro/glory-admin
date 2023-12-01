@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "managemntteams",
+  "info": {
+    "singularName": "managemntteam",
+    "pluralName": "managemntteams",
+    "displayName": "managemntteam",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "phonenumber": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

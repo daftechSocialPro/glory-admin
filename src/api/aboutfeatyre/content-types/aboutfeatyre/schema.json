@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "aboutfeatyres",
+  "info": {
+    "singularName": "aboutfeatyre",
+    "pluralName": "aboutfeatyres",
+    "displayName": "aboutfeatyre",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "discription": {
+      "type": "text"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
