@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vedios",
+  "info": {
+    "singularName": "vedio",
+    "pluralName": "vedios",
+    "displayName": "vedio"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "vediolink": {
+      "type": "string"
+    }
+  }
+}

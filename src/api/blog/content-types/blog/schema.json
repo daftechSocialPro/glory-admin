@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "clients",
+  "collectionName": "blogs",
   "info": {
-    "singularName": "client",
-    "pluralName": "clients",
-    "displayName": "Client",
-    "description": ""
+    "singularName": "blog",
+    "pluralName": "blogs",
+    "displayName": "blog"
   },
   "options": {
     "draftAndPublish": true

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "whychooseus",
     "pluralName": "whychooseuses",
-    "displayName": "whychooseus"
+    "displayName": "whychooseus",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,6 +17,16 @@
     },
     "description": {
       "type": "text"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

@@ -778,17 +778,44 @@ export interface ApiAgentAgent extends Schema.CollectionType {
   };
 }
 
+export interface ApiBlogBlog extends Schema.CollectionType {
+  collectionName: 'blogs';
+  info: {
+    singularName: 'blog';
+    pluralName: 'blogs';
+    displayName: 'blog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    image: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiClientClient extends Schema.CollectionType {
   collectionName: 'clients';
   info: {
     singularName: 'client';
     pluralName: 'clients';
     displayName: 'Client';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
     image: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -801,6 +828,37 @@ export interface ApiClientClient extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::client.client',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiConfigurationConfiguration extends Schema.CollectionType {
+  collectionName: 'configurations';
+  info: {
+    singularName: 'configuration';
+    pluralName: 'configurations';
+    displayName: 'configuration';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    type: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::configuration.configuration',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::configuration.configuration',
       'oneToOne',
       'admin::user'
     > &
@@ -950,7 +1008,7 @@ export interface ApiPropertyProperty extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    type: Attribute.Enumeration<['For Rent ', 'For Sell']>;
+    type: Attribute.Enumeration<['For Rent', 'For Sell']>;
     name: Attribute.String;
     description: Attribute.Text;
     location: Attribute.String;
@@ -1072,12 +1130,43 @@ export interface ApiTestimonyTestimony extends Schema.CollectionType {
   };
 }
 
+export interface ApiVedioVedio extends Schema.CollectionType {
+  collectionName: 'vedios';
+  info: {
+    singularName: 'vedio';
+    pluralName: 'vedios';
+    displayName: 'vedio';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    vediolink: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::vedio.vedio',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::vedio.vedio',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiWhychooseusWhychooseus extends Schema.CollectionType {
   collectionName: 'whychooseuses';
   info: {
     singularName: 'whychooseus';
     pluralName: 'whychooseuses';
     displayName: 'whychooseus';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1085,6 +1174,7 @@ export interface ApiWhychooseusWhychooseus extends Schema.CollectionType {
   attributes: {
     title: Attribute.String;
     description: Attribute.Text;
+    logo: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1099,6 +1189,28 @@ export interface ApiWhychooseusWhychooseus extends Schema.CollectionType {
       'oneToOne',
       'admin::user'
     > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiYearYear extends Schema.CollectionType {
+  collectionName: 'years';
+  info: {
+    singularName: 'year';
+    pluralName: 'years';
+    displayName: 'year';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    year: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::year.year', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::year.year', 'oneToOne', 'admin::user'> &
       Attribute.Private;
   };
 }
@@ -1122,7 +1234,9 @@ declare module '@strapi/types' {
       'api::aboutfeatyre.aboutfeatyre': ApiAboutfeatyreAboutfeatyre;
       'api::aboutus.aboutus': ApiAboutusAboutus;
       'api::agent.agent': ApiAgentAgent;
+      'api::blog.blog': ApiBlogBlog;
       'api::client.client': ApiClientClient;
+      'api::configuration.configuration': ApiConfigurationConfiguration;
       'api::contactus.contactus': ApiContactusContactus;
       'api::feature.feature': ApiFeatureFeature;
       'api::home-hero.home-hero': ApiHomeHeroHomeHero;
@@ -1131,7 +1245,9 @@ declare module '@strapi/types' {
       'api::realstatenumber.realstatenumber': ApiRealstatenumberRealstatenumber;
       'api::site.site': ApiSiteSite;
       'api::testimony.testimony': ApiTestimonyTestimony;
+      'api::vedio.vedio': ApiVedioVedio;
       'api::whychooseus.whychooseus': ApiWhychooseusWhychooseus;
+      'api::year.year': ApiYearYear;
     }
   }
 }
