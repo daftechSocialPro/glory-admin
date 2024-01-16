@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "realstatenumbers",
+  "info": {
+    "singularName": "realstatenumber",
+    "pluralName": "realstatenumbers",
+    "displayName": "progressbar",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "number": {
+      "type": "integer"
+    }
+  }
+}

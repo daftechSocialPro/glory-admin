@@ -1,0 +1,84 @@
+{
+  "kind": "collectionType",
+  "collectionName": "properties",
+  "info": {
+    "singularName": "property",
+    "pluralName": "properties",
+    "displayName": "Property",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "For Rent",
+        "For Sell"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "location": {
+      "type": "string"
+    },
+    "type2": {
+      "type": "enumeration",
+      "enum": [
+        "Apartment",
+        "Villa",
+        "Office"
+      ]
+    },
+    "price": {
+      "type": "string"
+    },
+    "beds": {
+      "type": "integer"
+    },
+    "bath": {
+      "type": "integer"
+    },
+    "Images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "pricetype": {
+      "type": "enumeration",
+      "enum": [
+        "mo",
+        "year"
+      ]
+    },
+    "area": {
+      "type": "integer"
+    },
+    "kitchen": {
+      "type": "integer"
+    },
+    "floorplan": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
