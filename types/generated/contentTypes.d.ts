@@ -743,6 +743,39 @@ export interface ApiAboutusAboutus extends Schema.CollectionType {
   };
 }
 
+export interface ApiAddressAddress extends Schema.CollectionType {
+  collectionName: 'addresses';
+  info: {
+    singularName: 'address';
+    pluralName: 'addresses';
+    displayName: 'address';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Location: Attribute.Component<'address.location', true>;
+    phone: Attribute.Component<'address.phone', true>;
+    Social: Attribute.Component<'address.social-media', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::address.address',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::address.address',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiAgentAgent extends Schema.CollectionType {
   collectionName: 'agents';
   info: {
@@ -962,6 +995,36 @@ export interface ApiHomeHeroHomeHero extends Schema.CollectionType {
   };
 }
 
+export interface ApiLocationLocation extends Schema.CollectionType {
+  collectionName: 'locations';
+  info: {
+    singularName: 'location';
+    pluralName: 'locations';
+    displayName: 'Location';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::location.location',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::location.location',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiManagemntteamManagemntteam extends Schema.CollectionType {
   collectionName: 'managemntteams';
   info: {
@@ -989,6 +1052,36 @@ export interface ApiManagemntteamManagemntteam extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::managemntteam.managemntteam',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPhonePhone extends Schema.CollectionType {
+  collectionName: 'phones';
+  info: {
+    singularName: 'phone';
+    pluralName: 'phones';
+    displayName: 'Phone';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    number: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::phone.phone',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::phone.phone',
       'oneToOne',
       'admin::user'
     > &
@@ -1092,6 +1185,37 @@ export interface ApiSiteSite extends Schema.CollectionType {
     createdBy: Attribute.Relation<'api::site.site', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::site.site', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSocialMediaSocialMedia extends Schema.CollectionType {
+  collectionName: 'social_medias';
+  info: {
+    singularName: 'social-media';
+    pluralName: 'social-medias';
+    displayName: 'Social Media';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    link: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::social-media.social-media',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::social-media.social-media',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
   };
 }
@@ -1233,6 +1357,7 @@ declare module '@strapi/types' {
       'plugin::i18n.locale': PluginI18NLocale;
       'api::aboutfeatyre.aboutfeatyre': ApiAboutfeatyreAboutfeatyre;
       'api::aboutus.aboutus': ApiAboutusAboutus;
+      'api::address.address': ApiAddressAddress;
       'api::agent.agent': ApiAgentAgent;
       'api::blog.blog': ApiBlogBlog;
       'api::client.client': ApiClientClient;
@@ -1240,10 +1365,13 @@ declare module '@strapi/types' {
       'api::contactus.contactus': ApiContactusContactus;
       'api::feature.feature': ApiFeatureFeature;
       'api::home-hero.home-hero': ApiHomeHeroHomeHero;
+      'api::location.location': ApiLocationLocation;
       'api::managemntteam.managemntteam': ApiManagemntteamManagemntteam;
+      'api::phone.phone': ApiPhonePhone;
       'api::property.property': ApiPropertyProperty;
       'api::realstatenumber.realstatenumber': ApiRealstatenumberRealstatenumber;
       'api::site.site': ApiSiteSite;
+      'api::social-media.social-media': ApiSocialMediaSocialMedia;
       'api::testimony.testimony': ApiTestimonyTestimony;
       'api::vedio.vedio': ApiVedioVedio;
       'api::whychooseus.whychooseus': ApiWhychooseusWhychooseus;

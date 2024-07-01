@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_address_locations",
+  "info": {
+    "displayName": "location"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}
