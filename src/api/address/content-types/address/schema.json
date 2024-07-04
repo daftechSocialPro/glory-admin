@@ -12,20 +12,11 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Location": {
-      "type": "component",
-      "repeatable": true,
-      "component": "address.location"
+    "nice": {
+      "type": "blocks"
     },
-    "phone": {
-      "type": "component",
-      "repeatable": true,
-      "component": "address.phone"
-    },
-    "Social": {
-      "type": "component",
-      "repeatable": true,
-      "component": "address.social-media"
+    "body": {
+      "type": "richtext"
     }
   }
 }
